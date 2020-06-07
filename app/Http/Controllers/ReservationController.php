@@ -15,10 +15,11 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $reservation = Reservation::with("room", "room.hotel")->orderBy("arrival")->get();
-        return view("dashboard.reservations")->with("reservations", $reservation);
+        $reservations = Reservation::with("room", "room.hotel")->orderBy("arrival")->get();
+        // $users = $request->user();
+        return view("dashboard.reservations",compact("reservations"));
     }
 
     /**

@@ -7,7 +7,7 @@
             <h2>{{ $hotelInfo->name }} - <small class="text-muted">{{ $hotelInfo->location }}</small></h2>
         </div>
         <div class="card-body">
-            <h5 class="card-title"></h5>
+            <h5 class="card-title"></h5>                             
             <p class="card-text">Book your stay now at the most magnificent resort in the world!</p>
             <form action="{{ route('reservations.update', $reservation->id) }}" method="POST">
                 @csrf

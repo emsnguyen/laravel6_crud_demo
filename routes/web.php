@@ -31,7 +31,8 @@
 // Route::get('home', function () {
 //     return response('not old enough', 200);
 // });
-Route::view("/", "index");
+Route::view("/", "home");
+Route::get("/", 'HotelController@downloadFile');
 Route::get("/hotels", 'HotelController@index');
 Route::get('/auth0/callback', '\Auth0\Login\Auth0Controller@callback')->name('auth0-callback');
 Route::get('/login', 'Auth\Auth0IndexController@login')->name('login');
@@ -41,3 +42,6 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::get('reservations/create/{id}', 'ReservationController@create');
     Route::resource('reservations', 'ReservationController')->except('create');
 });
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
