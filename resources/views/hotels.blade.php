@@ -1,6 +1,7 @@
 @extends('layouts.default')
 @section('title', 'Hotel Lists')
 @section('content')
+<p>session value: {{$value}}</p>
 <table class="table table-striped">
     <thead class="thead-dark">
         <tr>
